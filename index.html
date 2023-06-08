@@ -188,26 +188,8 @@
 
           }
         },
-        {
-          description: "Smart command, say how much x in what we say",
-          indexes:["what's the number of *"],
-          smart:true,
-          action:function(i,wildcard){
-            document.getElementById('time').innerHTML = "The number of " + wildcard + ' is '+ Math.floor(Math.random()) + 1;
-          }
-        },
-        {
-          description: "Smart command, say how much x in what we say",
-          indexes:["What is *"],
-          smart:true,
-          action:function(i,wildcard){
-            // document.getElementById('time').innerHTML = "The number of " + wildcard + ' is '+ Math.floor(Math.random()) + 1;
-            let link = "https://www.wikipedia.org/w/api.php?action=opensearch&format=json&search=" +wildcard;
-            $.getJSON(link);
-            
-            
-          }
-        }, {
+        
+         {
           description: "For time",
           indexes:["what's the time"],
           //smart:true,
