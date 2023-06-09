@@ -25,9 +25,84 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 <!-- <script type="text/javascript" src="https://eliteenindia.in/wp-content/themes/oceanwp/assets/js/jquery.jplayer.js"></script> -->
   <style type="text/css">
+    .button {
+  min-width: 300px;
+  min-height: 60px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 22px;
+  text-transform: uppercase;
+  letter-spacing: 1.3px;
+  font-weight: 700;
+  color: #bcbfc4;
+  background: #2d58e6;
+background: linear-gradient(90deg, rgb(237, 243, 242) 0%, rgb(224, 236, 235) 100%);
+  border: none;
+  border-radius: 1000px;
+  box-shadow: 12px 12px 24px rgba(79,209,197,.64);
+  transition: all 0.3s ease-in-out 0s;
+  cursor: pointer;
+  outline: none;
+  position: relative;
+  padding: 10px;
+  }
+
+button::before {
+content: '';
+  border-radius: 1000px;
+  min-width: calc(300px + 12px);
+  min-height: calc(60px + 12px);
+  border: 6px solid #3b86f7;
+  box-shadow: 0 0 60px rgba(89, 78, 235, 0.64);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: all .3s ease-in-out 0s;
+}
+
+.button:hover, .button:focus {
+  color: #5454fc;
+  transform: translateY(-6px);
+}
+
+button:hover::before, button:focus::before {
+  opacity: 1;
+}
+
+button::after {
+  content: '';
+  width: 30px; height: 30px;
+  border-radius: 100%;
+  border: 6px solid #4566f8;
+  position: absolute;
+  z-index: -1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: ring 1.5s infinite;
+}
+
+button:hover::after, button:focus::after {
+  animation: none;
+  display: none;
+}
+
+@keyframes ring {
+  0% {
+    width: 30px;
+    height: 30px;
+    opacity: 1;
+  }
+  100% {
+    width: 300px;
+    height: 300px;
+    opacity: 0;
+  }
+}
     
     body{
-       background-image: url(aa.gif);
+       background-image: url(o.jpg);
        background-repeat: no-repeat;
    background-attachment: fixed;
    background-size: cover;
@@ -54,17 +129,7 @@
 
   <body><center>
     <div class="#"></div><br><br>
-    <button style="
-              
-    padding: 15px 25px;
-    font-size: 25px;
-    text-align: center;
-    cursor: pointer;
-    color: #3eb8ce;
-    background-color:#3b444b;
-
-    border-radius: 10px;
-    box-shadow: 0 5px #f2f8f8;"
+    <button class="button"
   
   
   >G-Alexa</button></center>
@@ -163,10 +228,45 @@
           }
         },
         {
-          description:"Say goodbye",
-          indexes:["goodbye"],
+          description:"Who Are You",
+          indexes:["Who Are You"],
           action:function(){
-            readOutLoud("ok goodbye see you  ");
+            readOutLoud("I am Your Voice Assistant , I am Here To Make You Work More Easy.  ");
+          }
+        },
+        {
+          description:"I Am Angry",
+          indexes:["I Am Angry"],
+          action:function(){
+            readOutLoud("Ohh Don't Angery Be Happy It's Human Nature But You Need To calm dowm  ");
+          }
+        },
+        {
+          description:"Say I Love You",
+          indexes:["I Love You"],
+          action:function(){
+            readOutLoud("I am Voice Assistant I Have No Feeling  ");
+          }
+        },
+        {
+          description:"Har Har Mahadev",
+          indexes:["Har Har Mahadev"],
+          action:function(){
+            readOutLoud("Har Har Mahadev, Jay Mahaakaal, Om , Jay Sanatan  ");
+          }
+        },
+        {
+          description:"Say I Love You",
+          indexes:["I am Indian"],
+          action:function(){
+            readOutLoud("Better than entire world, is our Hindustan,   ");
+          }
+        },
+        {
+          description:"Say I Love You",
+          indexes:["I am Girl"],
+          action:function(){
+            readOutLoud("Hey Papa Ki Pari Please Drive Slowly, ");
           }
         },
         {
@@ -225,7 +325,27 @@
           //smart:true,
           action:function(){
             window.open('https://www.google.co.in','_blank');
-            readOutLoud("opning google");
+            readOutLoud("opening google");
+            document.getElementById('time').innerHTML = "Please Allow The Pop-ups To Open Google"
+          }
+        },
+        {
+          description: "Open google ",
+          indexes:["google"],
+          //smart:true,
+          action:function(){
+            window.open('https://www.google.co.in','_blank');
+            readOutLoud("opening google");
+            document.getElementById('time').innerHTML = "Please Allow The Pop-ups To Open Google"
+          }
+        },
+        {
+          description: "Open google ",
+          indexes:["Search engine"],
+          //smart:true,
+          action:function(){
+            window.open('https://www.google.co.in','_blank');
+            readOutLoud("opening google");
             document.getElementById('time').innerHTML = "Please Allow The Pop-ups To Open Google"
           }
         },
@@ -236,6 +356,96 @@
           action:function(){
             window.open('https://www.youtube.com/?app=desktop','_blank');
             readOutLoud("oppning Youtube");
+            document.getElementById('time').innerHTML = "Please Allow The Pop-ups To Open Youtube"
+          }
+        },
+        {
+          description: "Open Flipkart ",
+          indexes:["open Flipkart"],
+          //smart:true,
+          action:function(){
+            window.open('https://www.flipkart.com/?app=desktop','_blank');
+            readOutLoud("oppning Flipkart");
+            document.getElementById('time').innerHTML = "Please Allow The Pop-ups To Open Youtube"
+          }
+        },
+        {
+          description: "Open Flipkart ",
+          indexes:["Flipkart"],
+          //smart:true,
+          action:function(){
+            window.open('https://www.flipkart.com/?app=desktop','_blank');
+            readOutLoud("oppning Flipkart");
+            document.getElementById('time').innerHTML = "Please Allow The Pop-ups To Open Youtube"
+          }
+        },
+        {
+          description: "Open amazon ",
+          indexes:["amazon"],
+          //smart:true,
+          action:function(){
+            window.open('https://www.amazon.com/?app=desktop','_blank');
+            readOutLoud("oppning amazon");
+            document.getElementById('time').innerHTML = "Please Allow The Pop-ups To Open Youtube"
+          }
+        },
+        {
+          description: "Open amazon ",
+          indexes:[" open amazon"],
+          //smart:true,
+          action:function(){
+            window.open('https://www.amazon.com/?app=desktop','_blank');
+            readOutLoud("oppning amazon");
+            document.getElementById('time').innerHTML = "Please Allow The Pop-ups To Open Youtube"
+          }
+        },
+        {
+          description: "Open amazon prime ",
+          indexes:["amazon prime"],
+          //smart:true,
+          action:function(){
+            window.open('https://www.primevideo.com/?app=desktop','_blank');
+            readOutLoud("oppning amazon prime video");
+            document.getElementById('time').innerHTML = "Please Allow The Pop-ups To Open Youtube"
+          }
+        },
+        {
+          description: "Open amazon prime ",
+          indexes:["open prime video"],
+          //smart:true,
+          action:function(){
+            window.open('https://www.primevideo.com/?app=desktop','_blank');
+            readOutLoud("oppning amazon prime video");
+            document.getElementById('time').innerHTML = "Please Allow The Pop-ups To Open Youtube"
+          }
+        },
+        {
+          description: "Open amazon prime ",
+          indexes:["prime video"],
+          //smart:true,
+          action:function(){
+            window.open('https://www.primevideo.com/?app=desktop','_blank');
+            readOutLoud("oppning amazon prime video");
+            document.getElementById('time').innerHTML = "Please Allow The Pop-ups To Open Youtube"
+          }
+        },
+        {
+          description: "Open netflix ",
+          indexes:["open netflix"],
+          //smart:true,
+          action:function(){
+            window.open('https://www.netflix.com/?app=desktop','_blank');
+            readOutLoud("oppning netflix");
+            document.getElementById('time').innerHTML = "Please Allow The Pop-ups To Open Youtube"
+          }
+        },
+        {
+          description: "Open netflix ",
+          indexes:["netflix"],
+          //smart:true,
+          action:function(){
+            window.open('https://www.netflix.com/?app=desktop','_blank');
+            readOutLoud("oppning netflix");
             document.getElementById('time').innerHTML = "Please Allow The Pop-ups To Open Youtube"
           }
         },
@@ -250,12 +460,82 @@
           }
         },
         {
+          description: "Open Gmail ",
+          indexes:["Gmail"],
+          //smart:true,
+          action:function(){
+            window.open('https://mail.google.com/mail/u/0/#','_blank');
+            readOutLoud("oppning Gmail");
+            document.getElementById('time').innerHTML = "Please Allow The Pop-ups To Open Gmail"
+          }
+        },
+        {
           description: "Open whatsapp ",
           indexes:["open whatsapp"],
           //smart:true,
           action:function(){
-            window.open('https://web.whatsapp.com/#','_blank');
+            window.open('https://web.whatsapp.com/?app=desktop','_blank');
             readOutLoud("oppning whatsapp");
+            document.getElementById('time').innerHTML = "Please Allow The Pop-ups To Open Gmail"
+          }
+        },
+        {
+          description: "Open whatsapp ",
+          indexes:["whatsapp"],
+          //smart:true,
+          action:function(){
+            window.open('https://web.whatsapp.com/?app=desktop','_blank');
+            readOutLoud("oppning whatsapp");
+            document.getElementById('time').innerHTML = "Please Allow The Pop-ups To Open Gmail"
+          }
+        },
+        {
+          description: "Udayakaranpur ",
+          indexes:["Tripathi Family"],
+          //smart:true,
+          action:function(){
+            window.open('https://gaurav320.github.io/udayakaranpur.github.io/#','_blank');
+            readOutLoud("opening Tripathi Family Udayakaranpur");
+            document.getElementById('time').innerHTML = "Please Allow The Pop-ups To Open Gmail"
+          }
+        },
+        {
+          description: "Sarkari Result ",
+          indexes:["Sarkari result"],
+          //smart:true,
+          action:function(){
+            window.open('https://www.sarkariresult.com/#','_blank');
+            readOutLoud("opening  Sarkari Result");
+            document.getElementById('time').innerHTML = "Please Allow The Pop-ups To Open Gmail"
+          }
+        },
+        {
+          description: "Sarkari Result ",
+          indexes:["open Sarkari result"],
+          //smart:true,
+          action:function(){
+            window.open('https://www.sarkariresult.com/#','_blank');
+            readOutLoud("opening  Sarkari Result");
+            document.getElementById('time').innerHTML = "Please Allow The Pop-ups To Open Gmail"
+          }
+        },
+        {
+          description: "chat gpt ",
+          indexes:["open chat gpt"],
+          //smart:true,
+          action:function(){
+            window.open('https://chat.openai.com/','_blank');
+            readOutLoud("opening  chat gpt open ai");
+            document.getElementById('time').innerHTML = "Please Allow The Pop-ups To Open Gmail"
+          }
+        },
+        {
+          description: "Gaurav Tripathi ",
+          indexes:["Gaurav Tripathi"],
+          //smart:true,
+          action:function(){
+            window.open('https://gaurav320.github.io/udayakaranpur.github.io/gaurav/index.html','_blank');
+            readOutLoud("opening Gaurav Tripathi Blog");
             document.getElementById('time').innerHTML = "Please Allow The Pop-ups To Open Gmail"
           }
         },
@@ -264,8 +544,38 @@
           indexes:["open omegle"],
           //smart:true,
           action:function(){
-            window.open('https://www.omegle.com/#','_blank');
+            window.open('https://www.omegle.com/?app=desktop','_blank');
             readOutLoud(" opnning omegle");
+            document.getElementById('time').innerHTML = "Please Allow The Pop-ups To Open Gmail"
+          }
+        },
+        {
+          description: "Open omegle ",
+          indexes:["omegle"],
+          //smart:true,
+          action:function(){
+            window.open('https://www.omegle.com/?app=desktop','_blank');
+            readOutLoud(" opening omegle");
+            document.getElementById('time').innerHTML = "Please Allow The Pop-ups To Open Gmail"
+          }
+        },
+        {
+          description: "Open omegle ",
+          indexes:["University"],
+          //smart:true,
+          action:function(){
+            window.open('http://www.vbspu.ac.in/#','_blank');
+            readOutLoud(" opening Purvachal University");
+            document.getElementById('time').innerHTML = "Please Allow The Pop-ups To Open Gmail"
+          }
+        },
+        {
+          description: "Youtube ",
+          indexes:["Youtube"],
+          //smart:true,
+          action:function(){
+            window.open('https://www.youtube.com/?app=desktop','_blank');
+            readOutLoud(" opening Youtube");
             document.getElementById('time').innerHTML = "Please Allow The Pop-ups To Open Gmail"
           }
         },
